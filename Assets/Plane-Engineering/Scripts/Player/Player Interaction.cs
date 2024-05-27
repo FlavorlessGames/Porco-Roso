@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
-            if (interactable != null)
+            if (interactable != null && inRange(interactable))
             {
                 interactable.Hover();
                 _current = interactable;
@@ -47,5 +47,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (_current == null) return;
         _current.Interact();
+    }
+
+    private bool inRange(Interactable target)
+    {
+        float dist = Vector3.Distance(transform.position, target.transform.position);
+        return dist < target.Range;
     }
 }

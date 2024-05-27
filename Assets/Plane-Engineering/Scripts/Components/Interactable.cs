@@ -35,13 +35,11 @@ public class Interactable : MonoBehaviour
         _timer = .1f;
         if (_current) return;
         OnHoverEvent?.Invoke();
-        Debug.Log("Hover");
     }
 
     public void Interact()
     {
         InteractEvent?.Invoke();
-        Debug.Log("Interacted with");
     }
 
     public delegate void GenericHandler();
