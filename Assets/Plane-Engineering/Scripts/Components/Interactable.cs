@@ -40,6 +40,7 @@ public class Interactable : MonoBehaviour
     public void Interact()
     {
         InteractEvent?.Invoke();
+        Debug.Log(name);
     }
 
     public delegate void GenericHandler();
