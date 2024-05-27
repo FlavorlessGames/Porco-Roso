@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//POOP
+
 public class Interactable : MonoBehaviour
 {
     public float Range { get { return _range; } }
