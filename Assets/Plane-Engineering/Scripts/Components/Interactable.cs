@@ -22,6 +22,7 @@ public class Interactable : MonoBehaviour
     {
         if (_current && _timer <= 0)
         {
+            _current = false;
             EndHoverEvent?.Invoke();
         }
         else if (_timer > 0)
@@ -34,6 +35,7 @@ public class Interactable : MonoBehaviour
     {
         _timer = .1f;
         if (_current) return;
+        _current = true;
         OnHoverEvent?.Invoke();
     }
 
