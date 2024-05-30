@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9152591946183665676
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      propertyPath: m_Name
+      value: Mock up Landing Gear
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4732742937000728007}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3702759846994328326}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5302755084021550015}
+  m_SourcePrefab: {fileID: 100100000, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+--- !u!1 &8342320381711734109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79b291eca2cd443478c49859500895e1, type: 3}
+  m_PrefabInstance: {fileID: 9152591946183665676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4732742937000728007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342320381711734109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130d944027a2db848876ccd2e61cc711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _range: 10
+--- !u!114 &3702759846994328326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342320381711734109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d346e2cba4841fab5fa211f6fa00d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightScale: {x: 1.1, y: 1.1, z: 1.1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  highlightSound: {fileID: 8300000, guid: c33255937a8614845859db005c5eb369, type: 3}
+--- !u!64 &5302755084021550015
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342320381711734109}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2867698775804517038, guid: 79b291eca2cd443478c49859500895e1, type: 3}

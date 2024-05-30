@@ -9,6 +9,9 @@ public class Highlight : MonoBehaviour
 
     private Renderer objRend;
 
+    private Vector3 meshCenter;
+    private Outline outline;
+
     [SerializeField] private Vector3 highlightScale = new Vector3(1.1f, 1.1f, 1.1f);
     [SerializeField] private Color highlightColor = Color.yellow;
     [SerializeField] private AudioClip highlightSound;
@@ -16,6 +19,10 @@ public class Highlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        outline = GetComponent<Outline>();
+
+        outline.enabled = false;
+
         Interactable interactable = GetComponent<Interactable>();
         interactable.OnHoverEvent += highlightHover;
         interactable.EndHoverEvent += highlightEnd;
@@ -23,13 +30,59 @@ public class Highlight : MonoBehaviour
         objRend = GetComponent<Renderer>();
         baseScale = transform.localScale;
         baseColor = objRend.material.color;
+
+        CalculateMeshCenter();
     }
 
-    private void highlightHover()
+    public void ScaleAround(Vector3 pivot, Vector3 newScale)
     {
-        
-        transform.localScale = highlightScale;
+        Vector3 A = gameObject.transform.localPosition;
+        Vector3 B = pivot;
+
+        Vector3 C = A - B; // diff from object pivot to desired pivot/origin
+
+        float RS = newScale.x / gameObject.transform.localScale.x; // relataive scale factor
+
+        // calc final position post-scale
+        Vector3 FP = B + C * RS;
+
+        // finally, actually perform the scale/translation
+        gameObject.transform.localScale = newScale;
+        gameObject.transform.localPosition = FP;
+    }
+
+
+    void CalculateMeshCenter()
+    {
+        MeshFilter meshFilter = GetComponent<MeshFilter>();
+
+        if (meshFilter != null && meshFilter.mesh != null)
+        {
+            Vector3[] vertices = meshFilter.mesh.vertices;
+            Vector3 sum = Vector3.zero;
+
+            foreach (Vector3 vertex in vertices)
+            {
+                sum += vertex;
+            }
+
+            meshCenter = sum / vertices.Length;
+        }
+
+        else
+        {
+            Debug.LogError("NO MESH");
+        }
+    }
+
+
+
+    private void highlightHover()
+    { 
+       // ScaleAround(meshCenter, highlightScale);
         objRend.material.color = highlightColor;
+
+        outline.enabled = true;
 
         AudioManager.instance.PlaySound(highlightSound);
     }
@@ -37,7 +90,18 @@ public class Highlight : MonoBehaviour
     private void highlightEnd()
     {
         Debug.Log("END");
-        transform.localScale = baseScale;
+      //  ScaleAround(meshCenter, baseScale);
         objRend.material.color = baseColor;
+
+        outline.enabled = false;
     }
 }
+
+
+
+
+
+
+
+
+
