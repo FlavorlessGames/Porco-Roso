@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _cam = _camera.GetComponent<Camera>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
